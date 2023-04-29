@@ -6,6 +6,10 @@ using CSharpBDD.WebPages;
 using NUnit.Framework;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports;
+using System.Net.NetworkInformation;
+using OpenQA.Selenium.DevTools.V110.ServiceWorker;
+
+[assembly: Parallelizable(ParallelScope.All)]
 
 namespace CSharpBDD.Mian
 {
