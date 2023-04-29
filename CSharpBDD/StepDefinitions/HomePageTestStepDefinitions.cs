@@ -12,8 +12,9 @@ namespace CSharpBDD.StepDefinitions
     public class HomePageTestStepDefinitions:PageInitializer
     {
 
-        [Category("smoke")]
-        [Then(@"all elements should displayed in home page")]
+        
+        [Then(@"all elements should displayed in home page"),Category("smoke")]
+        
         public void ThenAllElementsShouldDisplayedInHomePage()
         {
           
