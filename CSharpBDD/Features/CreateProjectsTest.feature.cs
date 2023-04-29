@@ -74,16 +74,16 @@ namespace CSharpBDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create project test")]
-        [NUnit.Framework.CategoryAttribute("createProject")]
-        public void CreateProjectTest()
+        [NUnit.Framework.DescriptionAttribute("Create Multiple project test")]
+        [NUnit.Framework.CategoryAttribute("createProjectWithTable")]
+        public void CreateMultipleProjectTest()
         {
             string[] tagsOfScenario = new string[] {
-                    "createProject"};
+                    "createProjectWithTable"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create project test", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
-this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Multiple project test", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 8
+ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -92,17 +92,88 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("click on Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.When("click on addproject button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "projectname",
+                            "",
+                            "managername",
+                            "",
+                            "teamsize",
+                            "",
+                            "status"});
+                table1.AddRow(new string[] {
+                            "nanasahed",
+                            "",
+                            "guri",
+                            "",
+                            "2",
+                            "",
+                            "open"});
+                table1.AddRow(new string[] {
+                            "banhi",
+                            "",
+                            "nami",
+                            "",
+                            "5",
+                            "",
+                            "close"});
+                table1.AddRow(new string[] {
+                            "karnol",
+                            "",
+                            "sahu",
+                            "",
+                            "11",
+                            "",
+                            "open"});
+                table1.AddRow(new string[] {
+                            "nanasahed",
+                            "",
+                            "guri",
+                            "",
+                            "2",
+                            "",
+                            "open"});
+                table1.AddRow(new string[] {
+                            "banhi",
+                            "",
+                            "nami",
+                            "",
+                            "5",
+                            "",
+                            "close"});
+                table1.AddRow(new string[] {
+                            "karnol",
+                            "",
+                            "sahu",
+                            "",
+                            "11",
+                            "",
+                            "open"});
+                table1.AddRow(new string[] {
+                            "nanasahed",
+                            "",
+                            "guri",
+                            "",
+                            "2",
+                            "",
+                            "open"});
+                table1.AddRow(new string[] {
+                            "banhi",
+                            "",
+                            "nami",
+                            "",
+                            "5",
+                            "",
+                            "close"});
+                table1.AddRow(new string[] {
+                            "karnol",
+                            "",
+                            "sahu",
+                            "",
+                            "11",
+                            "",
+                            "open"});
 #line 9
- testRunner.And("fill the all required deatails", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
- testRunner.Then("project should display in project list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("Create Multiple projects", ((string)(null)), table1, "When ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -2,9 +2,23 @@
 
 A short summary of the feature
 
-@createProject
-Scenario: Create project test
-	Given click on Project button 
-	When  click on addproject button
-	And  fill the all required deatails
-	Then project should display in project list
+
+
+	@createProjectWithTable
+	Scenario: Create Multiple project test
+	When   Create Multiple projects
+
+	|projectname|  |managername|  |teamsize|   |status|
+	| nanasahed   |  | guri      |  | 2      |   | open |
+	| banhi       |  | nami      |  | 5      |   | close|
+	| karnol      |  | sahu      |  | 11     |   | open |
+	| nanasahed   |  | guri      |  | 2      |   | open |
+	| banhi       |  | nami      |  | 5      |   | close|
+	| karnol      |  | sahu      |  | 11     |   | open |
+	| nanasahed   |  | guri      |  | 2      |   | open |
+	| banhi       |  | nami      |  | 5      |   | close|
+	| karnol      |  | sahu      |  | 11     |   | open |
+	
+	
+	
+	
