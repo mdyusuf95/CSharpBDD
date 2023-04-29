@@ -9,7 +9,7 @@ using AventStack.ExtentReports;
 using System.Net.NetworkInformation;
 using OpenQA.Selenium.DevTools.V110.ServiceWorker;
 
-[assembly: Parallelizable(ParallelScope.All)]
+//[assembly: Parallelizable(ParallelScope.All)]
 
 namespace CSharpBDD.Mian
 {
@@ -30,6 +30,29 @@ namespace CSharpBDD.Mian
             ExtentReport. _scenario = ExtentReport. _feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
 
         }
+        [BeforeScenario(Order = 2)]
+        public void BeforeScenario()
+        {
+            string Url = TestContext.Parameters.Get("Url").ToString();
+            string username = TestContext.Parameters.Get("username").ToString();
+            string password = TestContext.Parameters.Get("password").ToString();
+
+
+            Utility.GetWebDriverUtilities().Get(Url);
+
+            logInPage = new LogInPage();
+            logInPage.SetLogIn(username, password);
+
+        }
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            homePage = new HomePage();
+            homePage.LogOut();
+            Utility.GetWebDriverUtilities().Quit();
+        }
+
+
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
@@ -43,6 +66,8 @@ namespace CSharpBDD.Mian
             Console.WriteLine("running After TestRun..");
             ExtentReport.ExtentReportTearDown();
         }
+
+
         [BeforeFeature]
         public static void BeforeFeature(FeatureContext featureContext)
         {
@@ -53,23 +78,10 @@ namespace CSharpBDD.Mian
         public static void AfterFeature()
         {
             Console.WriteLine("running After Feature..");
+            
         }
 
-        [BeforeScenario(Order =2)]
-       
-        public void BeforeScenario()
-        {
-            string Url = TestContext.Parameters.Get("Url").ToString();
-            string username = TestContext.Parameters.Get("username").ToString();
-            string password = TestContext.Parameters.Get("password").ToString();
-
-          
-            Utility.GetWebDriverUtilities().Get(Url);
-           
-            logInPage = new LogInPage();
-             logInPage.SetLogIn(username,password);
-
-        }
+        
         [BeforeStep]
         public void BeforeStep()
         {
@@ -127,10 +139,7 @@ namespace CSharpBDD.Mian
 
 
         }
-        [AfterScenario]
-        public void AfterScenario()
-        {
-            Utility.GetWebDriverUtilities().Quit();
-        }
+       
+       
     }
 }
