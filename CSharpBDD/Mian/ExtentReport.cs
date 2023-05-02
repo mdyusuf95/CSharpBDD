@@ -53,6 +53,7 @@ namespace CSharpBDD.Mian
         public static void ExtentReportTearDown()
         {
             _extentReports.Flush();
+            
         }
 
         public static string addScreenShot(IWebDriver driver, ScenarioContext scenarioContext)
