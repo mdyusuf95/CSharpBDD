@@ -9,6 +9,7 @@ namespace CSharpBDD.StepDefinitions
     [Binding]
     public class ProjectPageTestStepDefinitions:PageInitializer
     {
+        [ Order(2)]
         [Given(@"click projects module")]
         public void GivenClickProjectsModule()
         {

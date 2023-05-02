@@ -1,4 +1,5 @@
 using CSharpBDD.Mian;
+using NUnit.Framework;
 using System.Linq.Expressions;
 using TechTalk.SpecFlow;
 
@@ -8,10 +9,11 @@ namespace CSharpBDD.StepDefinitions
     [Binding]
     public class CreateProjectsTestStepDefinitions:PageInitializer
     {
+        [Order(3)]
         [When(@"Create Multiple projects")]
         public void WhenCreateMultipleProjects(Table table)
         {
-        again:
+        
             foreach (var row in table.Rows)
             {    
                 string projectname = row["projectname"];

@@ -14,6 +14,7 @@ namespace CSharpBDD.StepDefinitions
 
         
         [Then(@"all elements should displayed in home page"),Category("smoke")]
+        [Order(1)]
         
         public void ThenAllElementsShouldDisplayedInHomePage()
         {
