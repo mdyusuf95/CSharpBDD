@@ -6,6 +6,12 @@
 	  
     <Parameter name="username" value="rmgyantra" />
     <Parameter name="password" value="rmgy@9999" />
+
+	  <Parameter name="name" value="Md Yusuf Bagwan" />
+	  <Parameter name="os" value="Windows 11" />
+	  <Parameter name="application" value="RMG Yantra" />
+	  
+	  
 	  
   </TestRunParameters>
  

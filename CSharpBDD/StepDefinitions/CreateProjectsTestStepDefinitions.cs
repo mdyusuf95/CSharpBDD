@@ -1,7 +1,7 @@
 using CSharpBDD.Mian;
-using CSharpBDD.WebPages;
-using System;
+using System.Linq.Expressions;
 using TechTalk.SpecFlow;
+
 
 namespace CSharpBDD.StepDefinitions
 {
@@ -11,17 +11,21 @@ namespace CSharpBDD.StepDefinitions
         [When(@"Create Multiple projects")]
         public void WhenCreateMultipleProjects(Table table)
         {
-            foreach(var row in table.Rows)
-            {
+        again:
+            foreach (var row in table.Rows)
+            {    
                 string projectname = row["projectname"];
-                string mangername = row["managername"];
-                string teamsize = row["teamsize"];
-                string status = row["status"];
+                    string mangername = row["managername"];
+                    string teamsize = row["teamsize"];
+                    string status = row["status"];
 
-                homePage.getProjects().Click();
-                projectsPage.getProjectCreateBtn().Click();
-                projectsPage.SetProject(projectname, teamsize, mangername, status);
+                    homePage.getProjects().Click();
+                    projectsPage.getProjectCreateBtn().Click();
+                    projectsPage.SetProject(projectname, teamsize, mangername, status);
+                
+               
             }
+           
         }
     }
 }

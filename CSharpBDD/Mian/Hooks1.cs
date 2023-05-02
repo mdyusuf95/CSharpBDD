@@ -6,10 +6,8 @@ using CSharpBDD.WebPages;
 using NUnit.Framework;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports;
-using System.Net.NetworkInformation;
-using OpenQA.Selenium.DevTools.V110.ServiceWorker;
 
-//[assembly: Parallelizable(ParallelScope.All)]
+
 
 namespace CSharpBDD.Mian
 {
@@ -92,7 +90,7 @@ namespace CSharpBDD.Mian
         {
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
-           // var driver = _container.Resolve<IWebDriver>();
+           
             //when Scenario Passed
             if (scenarioContext.TestError == null)
             {

@@ -202,7 +202,7 @@ namespace CSharpBDD.Mian
 
             if (NameOFbrowser.Equals("chrome"))
             {
-               // new DriverManager().SetUpDriver(new ChromeConfig());
+              
 
                 driver = new ChromeDriver();
             }
@@ -210,11 +210,10 @@ namespace CSharpBDD.Mian
 
             else if (NameOFbrowser.Equals("firefox"))
             {
-               // new DriverManager().SetUpDriver(new FirefoxConfig());
+              
                 driver = new FirefoxDriver();
             }
-           // Utility.SetDriver(driver);
-           // driver = Utility.GetWebDriverUtilities().GetEventfiringWebDriver();
+          
             Utility.SetDriver(driver);
             Utility.GetDriver().Manage().Window.Maximize();
             Utility.GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);

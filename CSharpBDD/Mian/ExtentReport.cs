@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports.Reporter.Configuration;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,9 @@ namespace CSharpBDD.Mian
 {
     public  class ExtentReport
     {
-        public static ExtentReports _extentReports;
-        public static ExtentTest _feature;
-        public static ExtentTest _scenario;
+        public static ExtentReports _extentReports=null;
+        public static ExtentTest _feature=null;
+        public static ExtentTest _scenario=null;
 
         public static string dir = AppDomain.CurrentDomain.BaseDirectory;
         public static string testResultPath = dir.Replace("bin\\Debug\\net6.0", "TestReports");
@@ -30,9 +31,21 @@ namespace CSharpBDD.Mian
 
             _extentReports = new ExtentReports();
             _extentReports.AttachReporter(htmlReporter);
-            _extentReports.AddSystemInfo("Application", " vtiger");
-            _extentReports.AddSystemInfo("Browser", "Chrome");
-            _extentReports.AddSystemInfo("OS", "Windows");
+
+            string app = TestContext.Parameters.Get("application").ToString();
+            string BaseUrl = TestContext.Parameters.Get("Url").ToString();
+            string browsername = TestContext.Parameters.Get("Browser").ToString();
+            string name = TestContext.Parameters.Get("name").ToString();
+            string os = TestContext.Parameters.Get("os").ToString();
+           
+            
+
+
+            _extentReports.AddSystemInfo("Application", app);
+            _extentReports.AddSystemInfo("BaseUrl", BaseUrl);
+            _extentReports.AddSystemInfo("Browser", browsername);
+            _extentReports.AddSystemInfo("OS", os);
+            _extentReports.AddSystemInfo("Name", name);
 
         }
         public static void ExtentReportTearDown()

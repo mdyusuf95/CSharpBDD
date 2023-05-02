@@ -45,7 +45,8 @@ namespace CSharpBDD.WebPages
         [FindsBy(How = How.XPath, Using = ("//button[@class='Toastify__close-button Toastify__close-button--success']"))]
         private IWebElement alertCloseBtnOnDelete { get; set; }
 
-
+        [FindsBy(How =How.XPath,Using =("(//input[@value='Cancel'])[3]"))]
+       private IWebElement CancelBtn { get; set; }
 
         public ProjectsPage()
         {
@@ -90,6 +91,10 @@ namespace CSharpBDD.WebPages
         public IWebElement getDelelteBtn()
         {
             return deleteBtn;
+        }
+        public IWebElement getCacelBtn()
+        {
+            return CancelBtn;
         }
 
         public IWebElement getAlertCloseeBtnOnAdd()
