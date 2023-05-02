@@ -35,17 +35,19 @@ namespace CSharpBDD.Mian
             string app = TestContext.Parameters.Get("application").ToString();
             string BaseUrl = TestContext.Parameters.Get("Url").ToString();
             string browsername = TestContext.Parameters.Get("Browser").ToString();
-            string name = TestContext.Parameters.Get("name").ToString();
+            string Author = TestContext.Parameters.Get("author").ToString();
             string os = TestContext.Parameters.Get("os").ToString();
-           
-            
+            string TimeOut = TestContext.Parameters.Get("timeout").ToString();
+
+
 
 
             _extentReports.AddSystemInfo("Application", app);
             _extentReports.AddSystemInfo("BaseUrl", BaseUrl);
             _extentReports.AddSystemInfo("Browser", browsername);
-            _extentReports.AddSystemInfo("OS", os);
-            _extentReports.AddSystemInfo("Name", name);
+            _extentReports.AddSystemInfo("TimeOut", TimeOut+" Sec");
+            _extentReports.AddSystemInfo("OS And Version", os);
+            _extentReports.AddSystemInfo("Author", Author);
 
         }
         public static void ExtentReportTearDown()

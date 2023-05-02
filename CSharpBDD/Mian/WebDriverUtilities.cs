@@ -216,7 +216,8 @@ namespace CSharpBDD.Mian
           
             Utility.SetDriver(driver);
             Utility.GetDriver().Manage().Window.Maximize();
-            Utility.GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+            int TimeOut= int.Parse(TestContext.Parameters.Get("timeout").ToString());
+            Utility.GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(TimeOut);
             Console.WriteLine("   [-OpenBrowser-]");
             
 
