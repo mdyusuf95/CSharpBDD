@@ -24,6 +24,7 @@ namespace CSharpBDD.StepDefinitions
             Assert.IsTrue(homePage.getProjects().Displayed);
             Assert.IsTrue(homePage.getUsers().Displayed);
             Assert.IsTrue(homePage.getTestYantra().Displayed);
+            
         }
     }
 }

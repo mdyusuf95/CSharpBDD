@@ -22,9 +22,10 @@ namespace CSharpBDD.Mian
             Utility.SetWebDriverUtilities(new WebDriverUtilities());
             Utility.SetExcelUtilities(new ExcelUtilities());
             Utility.SetCShapUtilities(new CShapUtilities());
+
             string browser = TestContext.Parameters.Get("Browser").ToString();
             Utility.GetWebDriverUtilities().OpenBrowserAndMaximizeAndImplicitWait(browser);
-           
+            
             ExtentReport. _scenario = ExtentReport. _feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
 
         }
